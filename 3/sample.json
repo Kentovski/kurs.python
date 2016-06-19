@@ -1,18 +1,22 @@
-{
-    "triangle": {
-        "begin": [34, 50],
-        "side": 120
-    },
-    "square": {
-        "begin": [44, -56],
-        "side": 160        
-    },
-    "rectangle": {
-        "begin": [0, 0],
-        "diagonal_point": [-134, -50]
-    },
-    "circle": {
+[
+     {
+        "type": "circle",
         "begin": [37, -60],
         "radius": 23
+    },
+    {
+        "type": "rectangle", 
+        "begin": [1, 1],
+        "diagonal_point": [-134, -50]
+    },
+    {
+        "type": "square",
+        "begin": [44, -56],
+        "side": 160
+    },
+    {
+        "type": "triangle",
+        "begin": [34, 50],
+        "side": 120
     }
-}
+]
