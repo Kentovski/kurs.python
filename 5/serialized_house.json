@@ -1,0 +1,23 @@
+ [
+    [
+        {"type": "window", "square": 1.25, "r": 0.42}, 
+        {"type": "window", "square": 1.25, "r": 0.42}, 
+        {"type": "wall", "square": 12.75, "r": 1.452}, 
+        {"type": "wall", "square": 10.75, "r": 1.452}, 
+        {"type": "wall", "square": 12, "r": 1.452}, 
+        {"type": "celling", "square": 10.5, "r": 3.84}, 
+        {"type": "floor", "square": 10.5, "r": 1.56}
+    ], 
+
+    [   
+        {"type": "window", "square": 1.25, "r": 0.42}, 
+        {"type": "window", "square": 1.25, "r": 0.42}, 
+        {"type": "door", "square": 2.1, "r": 0.36}, 
+        {"type": "wall", "square": 26.75, "r": 1.452}, 
+        {"type": "wall", "square": 18, "r": 1.452}, 
+        {"type": "wall", "square": 29.9, "r": 1.452}, 
+        {"type": "wall", "square": 26.75, "r": 1.452}, 
+        {"type": "celling", "square": 28, "r": 3.84}, 
+        {"type": "floor", "square": 28, "r": 1.56}
+    ]
+]
