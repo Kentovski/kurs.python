@@ -40,6 +40,8 @@ def migrate(model):
 
 
 def insert(model, **kwargs):
+    if not kwargs:
+        kwargs = model.__dict__
     table_name = model.__class__.__name__
     fields = ', '.join(kwargs.keys())
     values = ', '.join("'{}'".format(v) for v in kwargs.values())
@@ -71,6 +73,15 @@ def select(model, **kwargs):
             if arg[1] == 'lt':
                 key = arg[0] + '__lt'
                 a.append('`{}` < "{}"'.format(arg[0], kwargs[key]))
+            if arg[1] == 'lte':
+                key = arg[0] + '__lte'
+                a.append('`{}` <= "{}"'.format(arg[0], kwargs[key]))
+            if arg[1] == 'gte':
+                key = arg[0] + '__gte'
+                a.append('`{}` >= "{}"'.format(arg[0], kwargs[key]))
+            if arg[1] == 'contains':
+                key = arg[0] + '__contains'
+                a.append('`{}` LIKE "%{}%"'.format(arg[0], kwargs[key]))
 
     where = ' AND '.join(a)
     query = "SELECT * FROM `{}` WHERE {}".format(table_name, where)
@@ -86,27 +97,37 @@ def select(model, **kwargs):
 
 
 def main():
-    class Personal(models.Model):
+    class Personal(models.AbstractModel):
         id = models.IntField(primary_key=True, autoincrement=True)
         lastname = models.CharField(max_length=15, unique=True)
         profession = models.CharField(max_length=20)
         age = models.IntField()
+        is_smoking = models.BoolField()
+        weight = models.FloatField()
 
     personal = Personal()
 
     migrate(personal)
-    insert(personal, lastname='Kovalsky', profession='engineer', age=36)
-    insert(personal, lastname='Svarovsky', profession='designer', age=46)
-    insert(personal, lastname='Shilin', profession='architect', age=54)
-    insert(personal, lastname='Vikul', profession='manager', age=25)
-    insert(personal, lastname='Sova', profession='engineer', age=32)
-    insert(personal, lastname='Sohin', profession='accountant', age=45)
-    insert(personal, lastname='Ivanov', profession='engineer', age=23)
+
+    personal.age = 36
+    personal.lastname = 'Kovalsky'
+    personal.profession = 'engineer'
+    personal.is_smoking = 1
+    personal.weight = 87.3
+    insert(personal)
+
+    insert(personal, lastname='Svarovsky', profession='designer', age=46, is_smoking = 1, weight = 90.4)
+    insert(personal, lastname='Shilin', profession='architect', age=54, is_smoking = 0, weight = 100.2)
+    insert(personal, lastname='Vikul', profession='manager', age=25, is_smoking = 0, weight = 96.4)
+    insert(personal, lastname='Sova', profession='engineer', age=32, is_smoking = 1, weight = 79.5)
+    insert(personal, lastname='Sohin', profession='accountant', age=45, is_smoking = 0, weight = 87.5)
+    insert(personal, lastname='Ivanov', profession='engineer', age=23, is_smoking = 1, weight = 96.1)
 
     print('Результат запроса: ', select(personal, id=3))
     print('Результат запроса: ', select(personal, profession='engineer'))
-    print('Результат запроса: ', select(personal, age__gt=40))
-    print('Результат запроса: ', select(personal, id__lt=5, age__gt=40))
+    print('Результат запроса: ', select(personal, age__gte=40))
+    print('Результат запроса: ', select(personal, id__lte=5, age__gt=40))
+    print('Результат запроса: ', select(personal, is_smoking=1, lastname__contains='sky'))
 
 
 if __name__ == '__main__':

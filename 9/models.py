@@ -1,4 +1,8 @@
-class Model:
+from abc import ABCMeta
+
+
+class AbstractModel:
+    __metaclass__ = ABCMeta
 
     def __iter__(self):
         return (item for item in self.__class__.__dict__ if not item.startswith('__'))
@@ -35,3 +39,15 @@ class IntField:
                     "AUTO_INCREMENT" if hasattr(self, 'autoincrement') and getattr(self, 'autoincrement') == True else '', 
                     "PRIMARY KEY" if hasattr(self, 'primary_key') and getattr(self, 'primary_key') == True  else '', 
                     )
+
+
+class BoolField:
+
+    def query(self):
+        return 'BOOL'
+
+
+class FloatField:
+
+    def query(self):
+        return 'FLOAT'
