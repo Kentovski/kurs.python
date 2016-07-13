@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Эмулятор битвы</title>
+</head>
+<body>
+    <h1>Эмулятор битвы</h1>
+    <form method="post" action="" role="form">
+        <p>
+            Количество армий (2-3):  <input type="number" name="armies" min="2" max="3">
+        </p>
+        <p>
+            Количество отрядов:  <input type="number" name="squads" min="1" max="10">
+        </p>
+        <p>
+            Количество солдат в отряде:  <input type="number" name="solders" min="1" max="10">
+        </p>
+        <p>
+            Количество машин в отряде:  <input type="number" name="vehicles" min="1" max="10">
+        </p>
+    <input type="submit" value="Рассчитать">
+    </form>
+    <div style="margin-top: 20px;">{result}</div>
+</body>
+</html>

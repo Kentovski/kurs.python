@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.sublime-workspace
 
 # C extensions
 *.so
