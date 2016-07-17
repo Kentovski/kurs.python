@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+flask_session/
 __pycache__/
 *.py[cod]
 *$py.class

@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+
+'''
+Хохлов Андрей
+
+'''
+
+
 import io
 from wsgiref.simple_server import make_server
 from cgi import parse_qs
