@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Other utils. &mdash; docs 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="docs 1 documentation" href="index.html" />
+    <link rel="prev" title="Unit: Army" href="army.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="other-utils">
+<h1>Other utils.<a class="headerlink" href="#other-utils" title="Permalink to this headline">¶</a></h1>
+<p>There are some helpers:</p>
+<span class="target" id="module-utils"></span><dl class="function">
+<dt id="utils.coroutine">
+<code class="descclassname">utils.</code><code class="descname">coroutine</code><span class="sig-paren">(</span><em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.coroutine" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>f</strong> &#8211; a coroutine to initialise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">coroutine.</td>
+</tr>
+</tbody>
+</table>
+<p>Decorator to initialize coroutine.
+It make something like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">my_coroutine</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">my_coroutine</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="utils.last_hero">
+<code class="descclassname">utils.</code><code class="descname">last_hero</code><span class="sig-paren">(</span><em>armies</em><span class="sig-paren">)</span><a class="headerlink" href="#utils.last_hero" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>armies</strong> &#8211; a list of armies. This is property of class <code class="xref py py-class docutils literal"><span class="pre">BattleField</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool.</td>
+</tr>
+</tbody>
+</table>
+<p>Calculate the state of army where only one solder has left.
+It takes a list and returns True if there&#8217;s only one solder in list of all armies.
+Otherwise returns False.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="battlefield.html">Main class Battlefield.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Units.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solder.html">Unit: Solder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vehicles.html">Unit: Vehicle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="squad.html">Unit: Squad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="army.html">Unit: Army</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Other utils.</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Andrey.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/utils.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

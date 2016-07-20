@@ -1,0 +1,1 @@
+Search.setIndex({envversion:50,filenames:["index"],objects:{},objnames:{},objtypes:{},terms:{"class":0,army:0,battlefield:0,content:0,main:0,other:0,solder:0,squad:0,unit:0,util:0,vehicl:0},titles:["Battle sumulator documentation."],titleterms:{battl:0,document:0,sumul:0}})
