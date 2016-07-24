@@ -1,0 +1,14 @@
+textarea {
+    resize: none; 
+    height: 300px;
+    width: 100%;
+} 
+.form-group .col-xs-1{
+    margin-top: 80px;
+}
+#decode{
+    min-height: 214px;
+}
+#diagram{
+    margin-top: 35px;
+}
