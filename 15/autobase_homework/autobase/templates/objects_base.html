@@ -1,0 +1,56 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Объекты модели</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script  type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />     
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        {% block alert %}{% endblock %}
+        <div class="col-sm-12">
+            <h3>{% block title %}{% endblock %}</h3><br>
+        </div>
+        
+        <div class="col-sm-8">
+            <table class="table">
+                {% block table %}{% endblock %}
+              </table>
+          </div>
+        <div class="col-sm-4">
+            <h4>Поиск по параметрам:</h4>
+            <form method="get" action="" class="form-inline sorting" role="form">
+                <div class="input-group">
+                    <div class="form-group">
+                        <select class="form-control" name="searchby">
+                            {% block search_form %}{% endblock %}
+                        </select>
+                        <input type="text" class="form-control" name="text" size="{% block search_form_size %}{% endblock %}">
+                        <button class="btn btn-default" type="submit" >Поиск</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <h4>Сортировать по:</h4>
+            <form method="get" action="" class="form-inline sorting" role="form">
+                <div class="input-group">
+                    <div class="form-group">
+                        <select class="form-control" name="sortby">
+                            {% block sort_form %}{% endblock %}
+                        </select>
+                        <button class="btn btn-default" type="submit" >Сортировка</button>
+                    </div>
+                </div>
+            </form>
+        <br><br>
+        <a href="create"><button type="button" class="btn btn-primary">Создать новый объект</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

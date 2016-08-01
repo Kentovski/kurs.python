@@ -1,0 +1,52 @@
+{% extends 'objects_base.html' %}
+
+{% block alert %}
+{% if result %}
+    {% if result.0 %}
+        <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            Производитель был успешно удален
+        </div>
+    {% else %}
+        <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            Ошибка удаления. Производитель не был удален.
+        </div>
+    {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block title %}Список объектов модели Manufacturer:{% endblock %}
+
+{% block table %}
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Бренд</th>
+                    <th>Страна</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for manufacturer in all_manufacturers %}
+                      <tr>
+                        <td>{{ manufacturer.id }}</td>
+                        <td><a href="?id={{ manufacturer.id }}">{{ manufacturer.brand }}</a></td>
+                        <td>{{ manufacturer.country }}</td>
+                      </tr>
+                      {% endfor %}
+                </tbody>
+{% endblock table %}                
+
+{% block search_form %}
+                            <option value="brand">Бренд</option>
+                            <option value="country">Страна</option>
+{% endblock %}         
+
+{% block search_form_size %}20{% endblock %}               
+
+{% block sort_form %}
+                            <option value="brand">Бренд &#8593;</option>
+                            <option value="-brand">Бренд &#8595;</option>
+                            <option value="country">Страна &#8593;</option>
+                            <option value="-country">Страна &#8595;</option>
+{% endblock %}

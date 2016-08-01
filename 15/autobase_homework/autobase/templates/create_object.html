@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создание/изменение объекта</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script  type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />     
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            {% if form.name.value == 'Noname' or form.brand.value == 'Noname' %}
+                <h3>Страница нового объекта:</h3><br>
+            {% else %}
+                <h3>Страница редактирования объекта {{ form.name.value }}:</h3><br>
+            {% endif %}
+            
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+        <form role="form" class="form form-horizontal" method="post" action="">
+            
+            <div style="display:none">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            </div>
+
+            {{ form.as_p }}
+
+            {% if form.name.value == 'Noname' or form.brand.value == 'Noname' %}
+                <button type="submit" class="btn btn-success">Создать</button>
+            {% else %}
+            <button type="submit" class="btn btn-success">Редактировать</button>
+            {% endif %}
+            
+        </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+</body>
+</html>
