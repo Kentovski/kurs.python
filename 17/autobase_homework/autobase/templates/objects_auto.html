@@ -1,0 +1,72 @@
+{% extends 'objects_base.html' %}
+
+{% block alert %}
+{% if result %}
+    {% if result.0 %}
+        <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            Автомобиль был успешно удален
+        </div>
+    {% else %}
+        <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            Ошибка удаления. Автомобиль не был удален.
+        </div>
+    {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block title %}Список объектов модели Auto:{% endblock %}
+
+{% block table %}
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Бренд</th>
+                    <th>Производитель</th>
+                    <th>Кузов</th>
+                    <th>Год выпуска</th>
+                    <th>Наличие</th>
+                    <th>Цена</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for auto in all_auto %}
+                  <tr>
+                    <td>{{ auto.id }}</td>
+                    <td><a href="?id={{ auto.id }}">{{ auto.name }}</a></td>
+                    <td>{{ auto.manufacturer }}</td>
+                    <td>{{ auto.body }}</td>
+                    <td>{{ auto.year|date:"Y" }}</td>
+                    {% for w in warehouse %}
+                        {% if auto.id == w.product_id  %}
+                            <td>{{w.quantity}}</td>
+                            <td>{{w.price}}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td><button auto="{{ auto.id }}" class="btn btn-primary btn-xs" type="button" buy>Купить</button></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+{% endblock table %}
+
+{% block search_form %}
+                            <option value="name">Бренд</option>
+                            <option value="manufacturer">Производитель</option>
+                            <option value="body">Кузов</option>
+                            <option value="year">Год</option>
+{% endblock %}
+
+{% block search_form_size %}13{% endblock %}
+
+{% block sort_form %}
+                            <option value="name">Бренд &#8593;</option>
+                            <option value="-name">Бренд &#8595;</option>
+                            <option value="manufacturer">Производитель &#8593;</option>
+                            <option value="-manufacturer">Производитель &#8595;</option>
+                            <option value="body">Кузов &#8593;</option>
+                            <option value="-body">Кузов &#8595;</option>
+                            <option value="year">Год &#8593;</option>
+                            <option value="-year">Год &#8595;</option>
+{% endblock %}
