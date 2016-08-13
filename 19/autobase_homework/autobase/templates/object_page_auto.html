@@ -1,0 +1,30 @@
+{% extends 'object_page_base.html' %}
+{% load i18n %}
+
+{% block title %}
+<h3>{% trans "Информация об объекте" %} {{ auto }}:</h3><br>
+{% endblock %}
+
+{% block description %}
+<dt>{% trans "Бренд:" %}</dt>
+<dd>- {{ auto.manufacturer.brand }}</dd>
+<dt>{% trans "Страна производитель:" %}</dt>
+<dd>- {{ auto.manufacturer.country }}</dd>
+<dt>{% trans "Кузов:" %}</dt>
+<dd>- {{ auto.body }}</dd>
+<dt>{% trans "Тип топлива:" %}</dt>
+<dd>- {{ auto.fuelType }}</dd>
+<dt>{% trans "Средний расход топлива:" %}</dt>
+<dd>- {{ auto.fuelRate }}</dd>
+<dt>{% trans "Объем двигателя:" %}</dt>
+<dd>- {{ auto.engineVolume }}</dd>
+<dt>{% trans "Мощность двигателя:" %}</dt>
+<dd>- {{ auto.enginePower }}</dd>
+<dt>{% trans "Коробка передач:" %}</dt>
+<dd>- {{ auto.gearbox }}</dd>
+<dt>{% trans "Год выпуска:" %}</dt>
+<dd>- {{ auto.year|date:"Y" }}</dd>
+{% endblock %}
+
+{% block edit_link %}edit?id={{ auto.id }}{% endblock %}
+{% block delete_link %}?delete={{ auto.id }}{% endblock %}

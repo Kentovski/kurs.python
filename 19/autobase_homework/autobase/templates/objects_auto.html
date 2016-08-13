@@ -1,0 +1,73 @@
+{% extends 'objects_base.html' %}
+{% load i18n %}
+
+{% block alert %}
+{% if result %}
+    {% if result.0 %}
+        <div class="alert alert-success fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            {% trans "Автомобиль был успешно удален" %}
+        </div>
+    {% else %}
+        <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+            {% trans "Ошибка удаления. Автомобиль не был удален." %}
+        </div>
+    {% endif %}
+{% endif %}
+{% endblock %}
+
+{% block title %}{% trans "Список объектов модели Auto:" %}{% endblock %}
+
+{% block table %}
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>{% trans "Бренд" %}</th>
+                    <th>{% trans "Производитель" %}</th>
+                    <th>{% trans "Кузов" %}</th>
+                    <th>{% trans "Год выпуска" %}</th>
+                    <th>{% trans "Наличие" %}</th>
+                    <th>{% trans "Цена" %}</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for auto in all_auto %}
+                  <tr>
+                    <td>{{ auto.id }}</td>
+                    <td><a href="?id={{ auto.id }}">{{ auto.name }}</a></td>
+                    <td>{{ auto.manufacturer }}</td>
+                    <td>{{ auto.body }}</td>
+                    <td>{{ auto.year|date:"Y" }}</td>
+                    {% for w in warehouse %}
+                        {% if auto.id == w.product_id  %}
+                            <td>{{w.quantity}}</td>
+                            <td>{{w.price}}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td><button auto="{{ auto.id }}" class="btn btn-primary btn-xs" type="button" buy>{% trans "Купить" %}</button></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+{% endblock table %}
+
+{% block search_form %}
+                            <option value="name">{% trans "Бренд" %}</option>
+                            <option value="manufacturer">{% trans "Производитель" %}</option>
+                            <option value="body">{% trans "Кузов" %}</option>
+                            <option value="year">{% trans "Год выпуска" %}</option>
+{% endblock %}
+
+{% block search_form_size %}13{% endblock %}
+
+{% block sort_form %}
+                            <option value="name">{% trans "Бренд" %} &#8593;</option>
+                            <option value="-name">{% trans "Бренд" %} &#8595;</option>
+                            <option value="manufacturer">{% trans "Производитель" %} &#8593;</option>
+                            <option value="-manufacturer">{% trans "Производитель" %} &#8595;</option>
+                            <option value="body">{% trans "Кузов" %} &#8593;</option>
+                            <option value="-body">{% trans "Кузов" %} &#8595;</option>
+                            <option value="year">{% trans "Год выпуска" %} &#8593;</option>
+                            <option value="-year">{% trans "Год выпуска" %} &#8595;</option>
+{% endblock %}

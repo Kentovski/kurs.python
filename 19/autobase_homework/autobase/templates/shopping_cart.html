@@ -1,0 +1,75 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Корзина" %}</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script  type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+    <script  type="text/javascript" src="{% static "script.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}" />   
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+        <h3>{% trans "Список добавленных вами товаров:" %}</h3><br>
+        </div>
+        <div class="col-sm-9">
+            <form role="form" class="form" method="post" action="">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>{% trans "Бренд" %}</th>
+                    <th>{% trans "Производитель" %}</th>
+                    <th>{% trans "Количество" %}</th>
+                    <th>{% trans "Цена, " %}$</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for auto in autos %}
+                  <tr cart>
+                    <td>{{ auto.id }}</td>
+                    <td>{{ auto.name }}</td>
+                    <td>{{ auto.manufacturer }}</td>
+                    {% for w in warehouse %}
+                        {% if auto.id == w.product_id  %}
+                            <td>
+                                <div class="col-sm-6">
+                                    <input type="number" name="quantity_{{ auto.id }}" maxlength="1" max="9" min="1" class="form-control input-sm" value="1" quantity="{{ w.quantity }}">
+                                </div>
+                                <i class="text-muted small text-center">{% trans "Доступно: " %}{{ w.quantity }}</i>
+                            </td>
+                            <td price>{{ w.price }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    <td><button title="Удалить из корзины" auto="{{ auto.id }}" class="btn btn-default btn-sm" type="button" delete>{% trans "Удалить" %}</button></td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="col-sm-3">
+            <div style="display:none">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            </div>
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit" >{% trans "Оформить заказ" %}</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

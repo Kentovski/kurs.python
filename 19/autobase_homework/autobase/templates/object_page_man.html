@@ -1,0 +1,16 @@
+{% extends 'object_page_base.html' %}
+{% load i18n %}
+
+{% block title %}
+<h3>{% trans "Информация об объекте" %} {{ manufacturer }}:</h3><br>
+{% endblock %}
+
+{% block description %}
+<dt>{% trans "Бренд:" %}</dt>
+<dd>- {{ manufacturer.brand }}</dd>
+<dt>{% trans "Страна производитель:" %}</dt>
+<dd>- {{ manufacturer.country }}</dd>
+{% endblock %}
+
+{% block edit_link %}edit?id={{ manufacturer.id }}{% endblock %}
+{% block delete_link %}?delete={{ manufacturer.id }}{% endblock %}

@@ -1,0 +1,427 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-13 20:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: autobase/forms.py:22 autobase/forms.py:48
+#: autobase/templates/objects_auto.html:26
+#: autobase/templates/objects_auto.html:56
+#: autobase/templates/objects_auto.html:65
+#: autobase/templates/objects_auto.html:66
+#: autobase/templates/objects_man.html:26
+#: autobase/templates/objects_man.html:42
+#: autobase/templates/objects_man.html:49
+#: autobase/templates/objects_man.html:50
+#: autobase/templates/shopping_cart.html:26
+msgid "Бренд"
+msgstr "Brand"
+
+#: autobase/forms.py:23 autobase/models.py:44
+#: autobase/templates/objects_auto.html:27
+#: autobase/templates/objects_auto.html:57
+#: autobase/templates/objects_auto.html:67
+#: autobase/templates/objects_auto.html:68
+#: autobase/templates/shopping_cart.html:27
+msgid "Производитель"
+msgstr "Manufacturer"
+
+#: autobase/forms.py:24 autobase/templates/objects_auto.html.py:28
+#: autobase/templates/objects_auto.html:58
+#: autobase/templates/objects_auto.html:69
+#: autobase/templates/objects_auto.html:70
+msgid "Кузов"
+msgstr "Body"
+
+#: autobase/forms.py:25
+msgid "Топливо"
+msgstr "Fuel type"
+
+#: autobase/forms.py:26
+msgid "Расход топлива"
+msgstr "Fuel rate"
+
+#: autobase/forms.py:27
+msgid "Объем двигателя"
+msgstr "Engine volume"
+
+#: autobase/forms.py:28
+msgid "Мощность двигателя"
+msgstr "Engine power"
+
+#: autobase/forms.py:29
+msgid "Коробка передач"
+msgstr "Gearbox"
+
+#: autobase/forms.py:30 autobase/templates/objects_auto.html.py:29
+#: autobase/templates/objects_auto.html:59
+#: autobase/templates/objects_auto.html:71
+#: autobase/templates/objects_auto.html:72
+msgid "Год выпуска"
+msgstr "Year"
+
+#: autobase/forms.py:34
+msgid "Введите дату в формате ГГГГ-ММ-ДД"
+msgstr "Input date in format YYYY-ММ-DD"
+
+#: autobase/forms.py:49 autobase/templates/objects_man.html.py:27
+#: autobase/templates/objects_man.html:43
+#: autobase/templates/objects_man.html:51
+#: autobase/templates/objects_man.html:52
+msgid "Страна"
+msgstr "Country"
+
+#: autobase/forms.py:61
+msgid "Формат номера: 0ХХ 123-45-67"
+msgstr "Number's fomat: 0ХХ 123-45-67"
+
+#: autobase/forms.py:64
+msgid "Имя"
+msgstr "Name"
+
+#: autobase/forms.py:65
+msgid "Фамилия"
+msgstr "Lastname"
+
+#: autobase/forms.py:67
+msgid "Мобильный телефон"
+msgstr "Mobile number"
+
+#: autobase/models.py:8
+msgid "Седан"
+msgstr "Sedan"
+
+#: autobase/models.py:9
+msgid "Хэтчбэк"
+msgstr "Hatchback"
+
+#: autobase/models.py:10
+msgid "Лимузин"
+msgstr "Limousine"
+
+#: autobase/models.py:11
+msgid "Кроссовер"
+msgstr "Crossover"
+
+#: autobase/models.py:12
+msgid "Универсал"
+msgstr "Universal"
+
+#: autobase/models.py:13
+msgid "Кабриолет"
+msgstr "Cabriole"
+
+#: autobase/models.py:14
+msgid "Минивэн"
+msgstr "Minivan"
+
+#: autobase/models.py:15
+msgid "Пикап"
+msgstr "Pick-up"
+
+#: autobase/models.py:16
+msgid "Внедорожник"
+msgstr "Off-road"
+
+msgid "Транспортировщик"
+msgstr "Car transporter"
+
+#: autobase/models.py:21
+msgid "Тягач"
+msgstr "Tow truck"
+
+#: autobase/models.py:22
+msgid "Лесовоз"
+msgstr "Logging truck"
+
+#: autobase/models.py:23
+msgid "Самосвал"
+msgstr "Dump truck"
+
+#: autobase/models.py:24
+msgid "Холодильник"
+msgstr "Refrigerator truck"
+
+#: autobase/models.py:28
+msgid "Мини-автобус"
+msgstr "Minibus"
+
+#: autobase/models.py:29
+msgid "Городской"
+msgstr "City bus"
+
+#: autobase/models.py:30
+msgid "Двухэтажный"
+msgstr "Double-decker"
+
+#: autobase/models.py:45
+msgid "Производители"
+msgstr "Manufacturers"
+
+#: autobase/models.py:53
+msgid "Бензин"
+msgstr "Petrol"
+
+#: autobase/models.py:54
+msgid "Дизель"
+msgstr "Diesel"
+
+#: autobase/models.py:55
+msgid "Газ"
+msgstr "Gas"
+
+#: autobase/models.py:56
+msgid "Электричество"
+msgstr "Electric"
+
+msgid "Количество"
+msgstr "Amount"
+
+
+#: autobase/models.py:57
+msgid "Гибрид"
+msgstr "Hibrid"
+
+#: autobase/models.py:64
+msgid "Ручная"
+msgstr "Manual"
+
+#: autobase/models.py:65
+msgid "Автоматическая"
+msgstr "Automatic"
+
+#: autobase/models.py:66
+msgid "Типтоник"
+msgstr "Tiptronic"
+
+#: autobase/models.py:67
+msgid "Адаптивная"
+msgstr "Adaptive"
+
+#: autobase/models.py:68
+msgid "Вариативная"
+msgstr "Variable"
+
+#: autobase/models.py:77
+msgid "Автомобиль"
+msgstr "Auto"
+
+#: autobase/models.py:78
+msgid "Автомобили"
+msgstr "Autos"
+
+#: autobase/models.py:90 autobase/models.py:91
+msgid "Склад"
+msgstr "Warehouse"
+
+#: autobase/models.py:101
+msgid "Номер должен быть в формате 0хх 1234567 или 0хх 123-45-67"
+msgstr "The number must be 0хх 1234567 or 0хх 123-45-67"
+
+msgid "Покупатель"
+msgstr "Buyer"
+
+#: autobase/models.py:111
+msgid "Покупатели"
+msgstr "Buyers"
+
+#: autobase/models.py:124
+msgid "Заказ"
+msgstr "Order"
+
+#: autobase/models.py:125
+msgid "Заказы"
+msgstr "Orders"
+
+#: autobase/templates/create_object.html:7
+msgid "Создание/изменение объекта"
+msgstr "Create/Edit object"
+
+#: autobase/templates/create_object.html:19
+msgid "Страница нового объекта:"
+msgstr "New object"
+
+#: autobase/templates/create_object.html:21
+msgid "Страница редактирования объекта"
+msgstr "Edit object"
+
+#: autobase/templates/create_object.html:36
+msgid "Создать"
+msgstr "Create"
+
+#: autobase/templates/create_object.html:38
+#: autobase/templates/object_page_base.html:24
+msgid "Редактировать"
+msgstr "Edit"
+
+#: autobase/templates/models.html:7
+msgid "Список моделей"
+msgstr "List of models"
+
+#: autobase/templates/models.html:15
+msgid "Выберите модель:"
+msgstr "Choose a model"
+
+#: autobase/templates/models.html:18
+msgid "Авто:"
+msgstr "Auto:"
+
+#: autobase/templates/object_page_auto.html:5
+#: autobase/templates/object_page_man.html:5
+msgid "Информация об объекте"
+msgstr "Object info"
+
+#: autobase/templates/object_page_auto.html:9
+#: autobase/templates/object_page_man.html:9
+msgid "Бренд:"
+msgstr "Brand:"
+
+#: autobase/templates/object_page_auto.html:11
+#: autobase/templates/object_page_man.html:11
+msgid "Страна производитель:"
+msgstr "Country:"
+
+#: autobase/templates/object_page_auto.html:13
+msgid "Кузов:"
+msgstr "Body:"
+
+#: autobase/templates/object_page_auto.html:15
+msgid "Тип топлива:"
+msgstr "Fuel type:"
+
+#: autobase/templates/object_page_auto.html:17
+msgid "Средний расход топлива:"
+msgstr "Fuel rate:"
+
+#: autobase/templates/object_page_auto.html:19
+msgid "Объем двигателя:"
+msgstr "Engine volume:"
+
+#: autobase/templates/object_page_auto.html:21
+msgid "Мощность двигателя:"
+msgstr "Engine power:"
+
+#: autobase/templates/object_page_auto.html:23
+msgid "Коробка передач:"
+msgstr "Gearbox:"
+
+#: autobase/templates/object_page_auto.html:25
+#, fuzzy
+#| msgid "Год выпуска"
+msgid "Год выпуска:"
+msgstr "Year"
+
+#: autobase/templates/object_page_base.html:7
+msgid "Страница объекта"
+msgstr "Object's page"
+
+#: autobase/templates/object_page_base.html:25
+#: autobase/templates/shopping_cart.html:50
+msgid "Удалить"
+msgstr "Delete"
+
+#: autobase/templates/objects_auto.html:9
+msgid "Автомобиль был успешно удален"
+msgstr "The auto has been successfully deleted."
+
+#: autobase/templates/objects_auto.html:14
+msgid "Ошибка удаления. Автомобиль не был удален."
+msgstr "Delete error. The auto has not been deleted."
+
+#: autobase/templates/objects_auto.html:20
+msgid "Список объектов модели Auto:"
+msgstr "List of Auto's models"
+
+#: autobase/templates/objects_auto.html:30
+msgid "Наличие"
+msgstr "In stock"
+
+#: autobase/templates/objects_auto.html:31
+msgid "Цена"
+msgstr "Price"
+
+#: autobase/templates/objects_auto.html:49
+msgid "Купить"
+msgstr "Buy"
+
+#: autobase/templates/objects_base.html:7
+msgid "Объекты модели"
+msgstr "List of models"
+
+#: autobase/templates/objects_base.html:23
+#: autobase/templates/shopping_cart.html:7
+msgid "Корзина"
+msgstr "Bucket"
+
+#: autobase/templates/objects_base.html:35
+msgid "Поиск по параметрам:"
+msgstr "Search by:"
+
+#: autobase/templates/objects_base.html:43
+msgid "Поиск"
+msgstr "Search"
+
+#: autobase/templates/objects_base.html:48
+msgid "Сортировать по:"
+msgstr "Sort by:"
+
+#: autobase/templates/objects_base.html:55
+msgid "Сортировка"
+msgstr "Sort"
+
+#: autobase/templates/objects_base.html:60
+msgid "Создать новый объект"
+msgstr "Create new object"
+
+#: autobase/templates/objects_man.html:9
+msgid "Производитель был успешно удален"
+msgstr "The manufacturer has been successfully deleted."
+
+#: autobase/templates/objects_man.html:14
+msgid "Ошибка удаления. Производитель не был удален."
+msgstr "Delete error. The manufacturer has been deleted."
+
+#: autobase/templates/objects_man.html:20
+msgid "Список объектов модели Manufacturer:"
+msgstr "List of Manufacturer's objects"
+
+#: autobase/templates/shopping_cart.html:18
+msgid "Список добавленных вами товаров:"
+msgstr "List of your goods:"
+
+#: autobase/templates/shopping_cart.html:29
+msgid "Цена, "
+msgstr "Price, "
+
+#: autobase/templates/shopping_cart.html:45
+msgid "Доступно: "
+msgstr "Available: "
+
+#: autobase/templates/shopping_cart.html:69
+msgid "Оформить заказ"
+msgstr "Checkout"
+
+#: autobase/templates/thanks.html:7
+msgid "Спасибо за покупку"
+msgstr "Thanks for buying!"
+
+#: autobase/templates/thanks.html:14
+msgid "Благодарим за покупку!"
+msgstr "Thanks for buying!"
+
+#: autobase/templates/thanks.html:15
+msgid "На главную"
+msgstr "Back to main page"
