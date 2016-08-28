@@ -76,11 +76,25 @@ WSGI_APPLICATION = 'exam.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'agregatordb',
+        'USER': 'root',
+        'PASSWORD': 'adminadmin',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'query_cache',
+        'TIMEOUT': '1200'
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

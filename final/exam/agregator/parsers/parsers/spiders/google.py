@@ -30,8 +30,12 @@ class GoogleSpider(scrapy.Spider):
 
 
     def go_redirect(self, response):
-        f = ItemLoader(item=GoogleItem())
-        direct_link = response.meta['direct_link']
-        f.add_value('source_link', response.request.url)
-        f.add_value('direct_link', direct_link)
-        return f.load_item()
+        # f = ItemLoader(item=GoogleItem())
+        # direct_link = response.meta['direct_link']
+        # f.add_value('source_link', response.request.url)
+        # f.add_value('direct_link', direct_link)
+        # return f.load_item()
+        yield {
+            'source_link': response.request.url,
+            'direct_link': response.meta['direct_link']
+        }
