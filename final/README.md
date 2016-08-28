@@ -1,0 +1,3 @@
+# Домашнее задание: "Агрегатор картинок"
+
+sudo apt-get install libxml2-dev libxslt-dev
