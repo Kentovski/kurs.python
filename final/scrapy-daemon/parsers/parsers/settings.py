@@ -20,7 +20,6 @@ DB_USER = 'root'
 DB_PASSWD = 'adminadmin'
 DB_DB = 'agregatordb'
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'parsers (+http://www.yourdomain.com)'
 
@@ -58,6 +57,9 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'parsers.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent' : None,
     'parsers.rotate_useragent.RotateUserAgentMiddleware': 400
@@ -70,10 +72,12 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+#ITEM_PIPELINES = {
+#    'parsers.pipelines.SomePipeline': 300,
+#}
 ITEM_PIPELINES = {
    'parsers.pipelines.MySQLPipeline': 300,
 }
-
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

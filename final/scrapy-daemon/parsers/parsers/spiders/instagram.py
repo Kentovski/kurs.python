@@ -1,22 +1,23 @@
 # -*- coding: utf-8 -*-
+
 import scrapy
 import json
-from urllib.parse import urljoin
+from urlparse import urljoin
 import datetime
 
-
 # run spider with command:
-# scrapy crawl instagram -a query=cat -a pages=3 -a django_task_id=1
+# scrapy crawl instagram -a query=cat -a pages=2 -a django_task_id=1
 
 class InstagramSpider(scrapy.Spider):
     name = "instagram"
     allowed_domains = ["instagram.com"]
 
-    def __init__(self, query=None, pages=3, django_task_id=1):
+    def __init__(self, django_task_id, query=None, pages=3, *args, **kwargs):
+        super(InstagramSpider, self).__init__(*args, **kwargs)
         self.pages = int(pages)
         self.start_urls = ['https://www.instagram.com/explore/tags/%s/?__a=1' % query]
-        self.rank = 0
         self.next_ = None
+        self.rank = 0
         self.has_next_page = None
         self.django_task_id = django_task_id
 
@@ -34,7 +35,6 @@ class InstagramSpider(scrapy.Spider):
             if has_next_page:
                 next_link = urljoin(response.url, '?__a=1&max_id=%s' % next_)
                 yield scrapy.Request(next_link, callback=self.get_page)
-
 
     def get_page(self, response):
         api = json.loads(response.body_as_unicode())
