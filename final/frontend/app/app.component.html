@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="text-muted">Агрегатор картинок</h2>
+        </div>
+        <div class="col-sm-12">
+            <form #f="ngForm" (ngSubmit)="onCrawl()">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Введите текст запроса, например: cat"
+                        name="query"
+                        required
+                        minlength="2" 
+                        [(ngModel)]="query"
+                        >
+                    <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Искать</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <total-stats [isCrawling]="isCrawling" [isFihished]="isFihished" ></total-stats>
+    <crawling-state [isCrawling]="isCrawling" [data]="data"></crawling-state>
+    <results *ngIf="isFihished" [results]="data.results"></results>
+    
+</div>
