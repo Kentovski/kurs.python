@@ -7,26 +7,23 @@ import {TotalStats} from './totalstats.interface.ts';
     template: `
         <div class="row" *ngIf="!isCrawling && !isFihished">
             <div class="col-sm-12" >
-                <h4 class="text-muted">Общая статистика количества спарсенных картинок:</h4>
-                <table class="table" >
-                    <thead>
-                      <tr>
-                        <th>Google Images</th>
-                        <th>Yandex Images</th>
-                        <th>Instagram</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>{{ totalstats?.google }}</td>
-                        <td>{{ totalstats?.yandex }}</td>
-                        <td>{{ totalstats?.instagram }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <h4 class="text-muted text-center">Количество спарсенных ссылок в базе:</h4>
+                <div class="row">
+                    <div class="col-sm-4 text-center"><img src="../img/google-big.png"><h2>{{totalstats?.google}}</h2></div>
+                    <div class="col-sm-4 text-center"><img src="../img/yandex-big.png"><h2>{{totalstats?.yandex}}</h2></div>
+                    <div class="col-sm-4 text-center"><img src="../img/instagram-big.png"><h2>{{totalstats?.instagram}}</h2></div>
+                </div>
             </div>
         </div>
     `,
+    styles: [`
+        .text-muted{
+            margin-bottom: 30px;
+        }
+        h2{
+            font-weight: bold;
+        }
+    `]
 })
 export class TotalStatsComponent implements OnInit{
     @Input() isCrawling;

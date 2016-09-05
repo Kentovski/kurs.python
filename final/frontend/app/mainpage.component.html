@@ -1,9 +1,6 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="text-muted">Агрегатор картинок</h2>
-        </div>
-        <div class="col-sm-12">
             <form #f="ngForm" (ngSubmit)="onCrawl()">
                 <div class="input-group">
                     <input 
@@ -24,6 +21,6 @@
     </div>
     <total-stats [isCrawling]="isCrawling" [isFihished]="isFihished" ></total-stats>
     <crawling-state [isCrawling]="isCrawling" [data]="data"></crawling-state>
-    <results *ngIf="isFihished" [results]="data.results"></results>
+    <results *ngIf="isFihished" [results]="data.results" [task_id]="task_id"></results>
     
 </div>

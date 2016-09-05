@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-// import {Observable} from 'rxjs/Observable';
-import {Observable} from 'rxjs/Rx';
-// import 'rxjs/Rx';
-// import 'rxjs/add/operator/flatMap';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/interval';
 
 @Injectable()
 export class HttpService {
@@ -23,5 +21,13 @@ export class HttpService {
 
     getTotalStats(){
         return this._http.get(`https://agregator-1995e.firebaseio.com/totalstats.json`);
+    }
+
+    getTasks(){
+        return this._http.get(`https://agregator-1995e.firebaseio.com/tasks.json`);
+    }
+
+    getTask(id: string){
+        return this._http.get(`https://agregator-1995e.firebaseio.com/task.json?id=${id}`);
     }
 }
