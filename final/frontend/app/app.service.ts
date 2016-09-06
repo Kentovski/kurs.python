@@ -9,25 +9,25 @@ export class HttpService {
 
     getStatus(task_id: string) {
         return Observable
-        .interval(2500)
+        .interval(1000)
         .flatMap(() => {
-            return this._http.get(`https://agregator-1995e.firebaseio.com/results.json?task-id=${task_id}`)
+            return this._http.get(`http://127.0.0.1:8000/send-status/?task-id=${task_id}`)
         });
     }
 
     sendRequest(query: string){
-        return this._http.get(`http://httpbin.org/ip?query=${query}`);
+        return this._http.get(`http://127.0.0.1:8000/get-request/?query=${query}`);
     }
 
     getTotalStats(){
-        return this._http.get(`https://agregator-1995e.firebaseio.com/totalstats.json`);
+        return this._http.get(`http://127.0.0.1:8000/send-total-stats/`);
     }
 
     getTasks(){
-        return this._http.get(`https://agregator-1995e.firebaseio.com/tasks.json`);
+        return this._http.get(`http://127.0.0.1:8000/send-tasks`);
     }
 
     getTask(id: string){
-        return this._http.get(`https://agregator-1995e.firebaseio.com/task.json?id=${id}`);
+        return this._http.get(`http://127.0.0.1:8000/send-task/?id=${id}`);
     }
 }

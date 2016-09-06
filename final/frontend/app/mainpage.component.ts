@@ -20,11 +20,11 @@ export class MainPageComponent  {
     constructor(private _httpService: HttpService){}
 
     onCrawl(){
-        this._httpService.sendRequest('cat')
+        this._httpService.sendRequest(this.query)
             .subscribe(result => {
                 this.isCrawling = true;
                 let res = result.json();
-                this.task_id = res['origin']
+                this.task_id = res['task_id']
                 let tasksSubscription = this._httpService.getStatus(this.task_id)
                 .subscribe(
                         (data) => {

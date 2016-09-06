@@ -12,7 +12,8 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
                     <table class="table">
                         <thead>
                           <tr>
-                            <th>Номер задания</th>
+                            <th>Номер </th>
+                            <th>Запрос</th>
                             <th>Яндекс, шт</th>
                             <th>Google, шт</th>
                             <th>Instagram, шт</th>
@@ -20,7 +21,8 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
                         </thead>
                         <tbody>
                           <tr *ngFor="let task of tasks">
-                            <td><a [routerLink]="['/task', task.id]">{{ task.id }}</a></td>
+                            <td>{{ task.id }}</td>
+                            <td><a [routerLink]="['/task', task.id]">{{ task.query }}</a></td>
                             <td>{{ task.yandex }}</td>
                             <td>{{ task.google }}</td>
                             <td>{{ task.instagram }}</td>

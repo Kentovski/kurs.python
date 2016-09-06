@@ -12,15 +12,15 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
                 </div>
                 <div>
                     <a *ngFor="let image of results.yandex" [href]="image.direct_link" target="_blank">
-                        <img [src]="image.direct_link" [title]="'#: ' + image.rank" >
+                        <img [src]="image.direct_link" title="Открыть в новой вкладке" >
                         <img [src]="yandex_icon" icon>
                     </a>
                     <a *ngFor="let image of results.instagram" [href]="image.direct_link" target="_blank">
-                        <img [src]="image.direct_link" [title]="'#: ' + image.rank" >
+                        <img [src]="image.direct_link" title="Открыть в новой вкладке" >
                         <img [src]="instagram_icon" icon>
                     </a>
                     <a *ngFor="let image of results.google" [href]="image.direct_link" target="_blank">
-                        <img [src]="image.direct_link" [title]="'#: ' + image.rank" >
+                        <img [src]="image.direct_link" title="Открыть в новой вкладке" >
                         <img [src]="google_icon" icon>
                     </a>
                 </div>

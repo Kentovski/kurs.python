@@ -15,7 +15,6 @@ import {HttpService} from './app.service';
                     <table class="table" *ngIf="!isLoading">
                         <thead>
                           <tr>
-                            <th>№</th>
                             <th>Прямая ссылка</th>
                             <th>Источник</th>
                             <th>Откуда спарсена</th>
@@ -25,10 +24,13 @@ import {HttpService} from './app.service';
                         </thead>
                         <tbody>
                           <tr *ngFor="let task of task_data">
-                            <td>{{ task.id }}</td>
                             <td><a [href]="task.direct_link" target="_blank">Перейти</a></td>
                             <td><a [href]="task.source_link" target="_blank">Перейти</a></td>
-                            <td>{{ task.site }}</td>
+                            <td [ngSwitch]="task.site">
+                                <span *ngSwitchCase="'y'">Яндекс</span>
+                                <span *ngSwitchCase="'g'">Гугл</span>
+                                <span *ngSwitchCase="'i'">Инстаграм</span>
+                            </td>
                             <td>{{ task.rank }}</td>
                             <td>{{ task.date }}</td>
                           </tr>
